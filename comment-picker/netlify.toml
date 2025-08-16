@@ -1,20 +1,8 @@
 # File: netlify.toml
-# Konfigurasi ini memberi tahu Netlify cara membangun dan men-deploy situs Anda.
+# Konfigurasi yang lebih sederhana
 
 [build]
   # Folder tempat Netlify akan menemukan function Anda.
-  # Pastikan ini cocok dengan struktur folder Anda.
   functions = "netlify/functions/"
-
-  # Perintah build tidak diperlukan untuk situs HTML statis sederhana,
-  # jadi kita bisa biarkan kosong.
-
-  # Folder yang akan di-publish. Karena index.html ada di root,
-  # kita bisa biarkan default atau set ke "."
+  # Folder yang akan di-publish.
   publish = "."
-
-[functions]
-  # Memastikan dependensi untuk function diinstal dengan benar.
-  # 'node-fetch' adalah dependensi yang kita gunakan di get-comments.js
-  node_bundler = "esbuild"
-  external_node_modules = ["node-fetch"]
