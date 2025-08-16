@@ -1,14 +1,11 @@
 {
   "name": "instagram-giveaway-picker",
   "version": "1.0.0",
-  "description": "Automated Instagram giveaway picker",
+  "description": "A simple static site with a Netlify Function.",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-fetch": "^2.6.7"
-  }
+  "license": "ISC"
 }
