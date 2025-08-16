@@ -3,8 +3,6 @@
 // PERINGATAN: Metode ini sangat tidak stabil dan bisa berhenti bekerja kapan saja tanpa pemberitahuan
 // karena bergantung pada struktur internal Instagram yang sering berubah.
 
-const fetch = require('node-fetch');
-
 // Fungsi untuk mengekstrak shortcode dari URL Instagram
 const getShortcodeFromUrl = (url) => {
     const match = url.match(/(?:p|reel)\/([a-zA-Z0-9_-]+)/);
@@ -28,6 +26,7 @@ async function fetchCommentPage(shortcode, endCursor = null) {
 
     const apiUrl = `https://www.instagram.com/graphql/query/?query_hash=${queryHash}&variables=${JSON.stringify(variables)}`;
 
+    // Kita sekarang menggunakan fetch bawaan Node.js, tidak perlu 'require' lagi.
     const response = await fetch(apiUrl, {
         headers: {
             // Menyamar sebagai browser biasa agar tidak langsung diblokir
